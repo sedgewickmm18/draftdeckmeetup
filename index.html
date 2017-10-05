@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+                <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+                <script>
+                        if (window.location.search.match(/print-pdf/gi)) {
+                        var link = document.createElement('link');
+
+                                link.rel = 'stylesheet';
+                                link.type = 'text/css';
+                                link.href = 'css/print/pdf.css';
+                                document.getElementsByTagName('head')[0].appendChild(link);
+                        }
+                </script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                                
+                                <section>
+                                        <h1> IoT </h2>
+                                        <h3> data, data everywhere</h4>
+                                        </textarea>
+                                </section>   
+                                <!--- <section data-background-image="pics/Household-Toilet-Pan-icon-iconfinder-comallowed.png" -->
+                                <section data-background-image="pics/flink_squirrel_1000.png"
+                                           data-background-size="300px" data-background-repeat="no-repeat" data-background-position="50% 80%">
+                                        <!--- <h4> don't flush it down the sink</h4> -->
+                                        <h3> just dump it into flink</h3>
+                                </section>   
+                                <section data-background-image="pics/imageedit_10_5970740616.png">
+				        <h5> Where does the data come from ?</h5>
+                                                <p><br></p>
+                                        <div id="LeftPanel" style="width: 50%; height: 100%; float: left;">
+                                                <p style="font-size: 60%">Single smart home with sensors</p>
+                                                <img src="pics/smart-home-2005993_cc0.png" width="80%" style="float: left,top;">
+                                        </div>
+                                        <!--- <p style="font-size: 100%">&#8649;</p> -->
+                                        <div id="RightPanel" style="width: 50%; height: 100%; float: right;">
+                                                <p style="font-size: 60%"><b>Lots</b> of homes with sensors</p>
+                                                <img src="pics/new-york-978265_1920_cc0.jpg" width="85%" style="float: right,top;">
+                                        </div>
+                                </section>   
+                                <section data-background-image="pics/imageedit_10_5970740616.png">
+				        <h5> So what do we do with all that data ? </h5>
+				        <section>
+                                                <p><br></p>
+                                        <div id="LeftPanel" style="width: 30%; height: 100%; float: left;">
+                                                <p style="font-size: 60%"><b>Elderly Care Example</b><br> "Door opens at night"</p><br>
+                                                <p style="font-size: 50%">This rather complex, real-life condition makes use of  </p>
+                                                <ul style="font-size: 50%">
+                                                     <li><b>stateful event processing</b> with a state machine</li>
+                                                     <li><b>sliding windows</b>, i.e. event orders plays a role</li>
+                                                     <li><b>time windows</b> to wait for the <b>absence</b> of particular events.</li>
+                                                     <br>
+                                                </ul>
+                                                <br>
+                                        </div>
+                                        <div id="RightPanel" style="width: 70%; height: 100%; float: right;">
+                                                <img src="pics/IoT4I_ElderlyCare.png" width="80%" style="float: right;">
+                                        </div>
+                                        </section>
+                                </section>
+                                <section data-background-image="pics/imageedit_10_5970740616.png">
+				        <h5> Digression: Complex Event Processing </h5>
+                                                <p><br></p>
+                                        <section>
+                                        <div id="LeftPanel" style="width: 50%; height: 100%; float: left;">
+                                                <b style="font-size: 70%">Events</b><br>
+                                                <ul style="font-size: 45%">
+                                                     <li> are <b>immutable</b></li>
+                                                     <li> have <b>strong temporal constraints</b>, i.e. event orders plays a role</li>
+                                                     <li> have a <b>managed lifecycle</b>, i.e. become "stale" after some time.
+                                                         This gives rise to <b>time windows</b> when looking for event patterns.</li>
+                                                     <br>
+                                                </ul>
+                                                <br>
+                                                <b style="font-size: 60%">Event Processing</b><br>
+                                                <p style="text-align: left;font-size: 40%"> is a method of tracking and analyzing
+                                                         streams of information about things that happen, i.e. events,[1]
+                                                         and deriving a conclusion from it.</p>
+                                                <b style="font-size: 60%">Complex Event Processing</b><br>
+                                                <p style="text-align: left;font-size: 40%"> or CEP, is event processing that combines data from
+                                                         multiple sources to infer events or patterns that suggest more complicated circumstances.
+                                                         The goal of complex event processing is to identify meaningful events (such as
+                                                         opportunities or threats) and respond to them as quickly as possible. <br>
+                                                         In general <b>event patterns</b> are more important than singular events</p>
+                                        </div>
+                                        <div id="RightPanel" style="width: 45%; height: 100%; float: right;">
+                                                <br>
+                                                <p style="font-size: 60%"><b>Traits/Functional characteristics</b><br>
+                                                <span style="font-size: 90%"> of a complex event processing engine</span></p>
+                                                <ul style="font-size: 50%">
+                                                     <li>Supports processing of multi-sourced event streams</li>
+                                                     <li>Allows detecting, correlating, aggregating and composing of events.</li>
+                                                     <li><b>Preserve event order</b><br>
+                                                        <span style="font-size: 90%">As a corollary a properly scoped "unified" clock/concept of time is required, so that
+                                                        the engine can distinguish between event generation and event ingestion time.</span></li>
+                                                     <li>Treat events as stale after the expiration of a time window.<br>
+                                                     <br>
+                                                </ul>
+                                                <br>
+                                        </div>
+                                        </section>
+                                </section>
+                                <section data-background-image="pics/imageedit_10_5970740616.png">
+				        <h5> Complex Event Processing in real life</h5>
+                                        <section>
+                                                <p style="font-size: 80%">non functional requirements</p>
+                                        <div id="LeftPanel" style="width: 50%; height: 100%; float: left;text-align: left;font-size: 45%">
+                                                <b>"At least once" guarantee</b>
+                                                <p style="font-size: 80%">
+                                                        No IoT event must get lost before being processed. IoT events must be
+                                                        retained/buffered until handled otherwise we could lose events, resp. do not detect
+                                                        patterns.<br>
+                                                        Note that this implies <b>fault tolerance</b>, i.e. restartability while preserving its
+                                                        internal state.
+                                                </p>
+                                                <b>Partial ordering guarantee</b>
+                                                <p style="font-size: 80%"> 
+                                                        Events for a particular group of devices (for example grouped by ownership)
+                                                        must be delivered and processed in order.</p>
+                                                <b>Scalability</b>
+                                                <p style="font-size: 80%">
+                                                        The CEP engine must scale with the number of users and rate of events.</p>
+                                                <b>Latency</b>
+                                                <p style="font-size: 80%">
+                                                        Events must be triggered within a certain time. For the elderly care example and end-to-end
+                                                        latency within minutes is tolerable.<br>
+                                                        Note that latency guarantees imply <b> availability</b></p>
+                                                <b>"Exactly once" guarantee</b>
+                                                <p style="font-size: 80%">
+                                                         No event pattern should be detected twice.</p>
+                                        </div>
+                                        <div id="RightPanel" style="width: 45%; height: 100%; float: right;font-size: 55%">
+                                                <br>
+                                                <p><b>Nice to have</b><br>
+                                                </p>
+                                                <ul style="font-size: 80%">
+                                                     <li>Support of a  modular programming model for event conditions</li><br>
+                                                     <li>Event conditions can be modified without an outage</li><br>
+                                                     <li>Rule editor for event conditions</li><br>
+                                                     <li>Low total cost of ownership</li><br>
+                                                        <ul style="font-size: 90%">
+                                                        <li>Low cost of components (hw,sw,saas)</li>
+                                                        <li>Automated instance deployment.</li>
+                                                        <li>Automated Ops runbooks.</li>
+                                                        </ul>
+                                                     <br>
+                                                </ul>
+                                                <br>
+                                        </div>
+                                        </section>
+                                </section>
+                                <section data-background-image="pics/imageedit_10_5970740616.png">
+				        <h5> CEP in an IoT architecture</h5>
+                                        <section>
+                                        <br>
+                                        <div id="LeftPanel" style="width: 30%; height: 100%; float: left;text-align: left;font-size: 45%">
+                                                <b>"Exactly once" guarantee</b>
+                                                <p style="font-size: 80%">
+                                                         No event pattern should be detected twice.</p>
+                                        </div>
+                                        <div id="RightPanel" style="width: 70%; height: 100%; float: right;">
+                                                <img src="pics/IoTLambda.png" width="70%" style="float: right;">
+                                        </div>
+                                        </section>
+                                </section>
+                                <section>
+                                        <img src="pics/img - 01.png" style="max-width: 100%;max-height: 100%;vertical-align: left;">
+                                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+
+                        Reveal.addEventListener( 'slidechanged', function( event ) {
+                                console.log('GOT IT: now at ' + Reveal.getSlidePastCount());
+
+                                //if (Reveal.getSlidePastCount() > 1 && Reveal.getSlidePastCount() < 3)
+                                //{
+                                //        Reveal.configure( {parallaxBackgroundImage: ''});
+                                //}
+                                //else {
+                                //        Reveal.configure( {parallaxBackgroundImage: 'pics/article-wireless-iot_core_parallax.jpg'});
+                                //}
+                                
+                                // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+                        } );
+
+			Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: false,
+      slideNumber: true,
+      center: true,
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+      //parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      parallaxBackgroundImage: 'pics/article-wireless-iot_core_parallax.jpg',
+      //parallaxBackgroundImage: 'pics/tuv-rheinland-iot-privacy_core_parallax.jpg',
+      //parallaxBackgroundImage: 'img-parallax-ecosystem-2-1820x1024.jpg',
+      //parallaxBackgroundImage: 'pics/imageedit_5_6188218247.jpg',
+      parallaxBackgroundSize: '2100px 1000px',
+      //parallaxBackgroundVertical: 300,
+
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
